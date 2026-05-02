@@ -5,7 +5,11 @@ const cors = require('cors');
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
 app.use(express.json());
 
 const PRICE_IDS = {
