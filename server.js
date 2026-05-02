@@ -86,6 +86,9 @@ app.post('/create-checkout-session', async (req, res) => {
       mode: 'payment',
       success_url: 'https://vznriviera.com/?success=1',
       cancel_url:  'https://vznriviera.com/',
+      shipping_address_collection: {
+    allowed_countries: ['FR', 'BE', 'CH', 'LU', 'MC'],
+  },
     };
 
     if (discountAmount > 0) {
