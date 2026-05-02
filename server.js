@@ -89,6 +89,9 @@ app.post('/create-checkout-session', async (req, res) => {
       shipping_address_collection: {
     allowed_countries: ['FR', 'BE', 'CH', 'LU', 'MC'],
   },
+       phone_number_collection: {
+    enabled: true,
+  },
     };
 
     if (discountAmount > 0) {
